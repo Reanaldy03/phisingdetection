@@ -1,0 +1,43 @@
+
+RINGKASAN HASIL EKSPERIMEN
+
+Judul:
+Klasifikasi URL Phishing Menggunakan LightGBM dengan Seleksi Fitur Berbasis SHAP
+
+Data:
+Training: 7658 baris dan 89 kolom
+Testing: 3772 baris dan 89 kolom
+Target: status
+Kolom URL mentah tidak dipakai sebagai fitur model
+Jumlah fitur numerik awal: 87
+Jumlah fitur konstan yang dibuang: 6
+Jumlah fitur final sebelum seleksi SHAP: 81
+Missing value training: 0
+Missing value testing: 0
+
+Distribusi kelas training:
+Legitimate: 3829
+Phishing: 3829
+
+Distribusi kelas testing:
+Legitimate: 1886
+Phishing: 1886
+
+Model terbaik:
+LightGBM_SHAP_Top_25
+
+Performa model terbaik pada data testing:
+Accuracy: 0.9703
+Precision: 0.9654
+Recall: 0.9756
+F1-score: 0.9705
+ROC-AUC: 0.9946
+Jumlah fitur: 25
+Training time: 1.5521 detik
+Prediction time: 0.0619 detik
+
+Fitur model terbaik:
+google_index, page_rank, nb_www, nb_hyperlinks, phish_hints, nb_slash, domain_age, nb_hyphens, length_hostname, web_traffic, ratio_digits_url, ratio_digits_host, length_words_raw, nb_dots, safe_anchor, length_url, longest_word_path, nb_qm, domain_in_title, ratio_extRedirection, ratio_extHyperlinks, links_in_tags, external_favicon, domain_registration_length, https_token
+
+Kalimat hasil awal untuk jurnal:
+Penelitian ini membandingkan LightGBM dengan seluruh fitur numerik dan LightGBM dengan fitur terpilih berdasarkan nilai mean absolute SHAP. Hasil evaluasi menunjukkan model terbaik adalah LightGBM_SHAP_Top_25 dengan F1-score sebesar 0.9705 dan ROC-AUC sebesar 0.9946. Temuan ini menunjukkan seleksi fitur berbasis SHAP dapat digunakan untuk memilih fitur URL yang paling berkontribusi terhadap deteksi phishing.
